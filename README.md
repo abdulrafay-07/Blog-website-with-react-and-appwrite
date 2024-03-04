@@ -1,2 +1,2 @@
 # Blog-Website-with-appwrite
- A functional blog website build using react for frontend and appwrite for backend
+ A functional blog website built using react for frontend and appwrite for backend
