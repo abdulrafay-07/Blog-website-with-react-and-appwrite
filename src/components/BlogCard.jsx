@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BlogCard = ({$id, title, featuredImageID}) => {
     return (
-        <Link to={`/post/${$id}`}>
+        <Link to={`/blog/${$id}`}>
             <div className="w-full bg-gray-100 rounded-xl p-4">
                 <div className="w-full flex justify-center mb-4">
                     <img src={appwriteService.getFilePreview(featuredImageID)} alt={title} className="rounded-xl" />
