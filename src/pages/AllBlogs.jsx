@@ -20,7 +20,7 @@ const AllBlogs = () => {
                 <div className="flex flex-wrap">
                     {blogs.map((blog) => (
                         <div key={blog.$id} className="p-2 w-1/4">
-                            <BlogCard blog={blog} />
+                            <BlogCard {...blog} />
                         </div>
                     ))}
                 </div>

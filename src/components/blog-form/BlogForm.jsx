@@ -16,7 +16,7 @@ const BlogForm = ({ blog }) => {
     });
 
     const navigate = useNavigate();
-    const userData = useSelector(state => state.user.userData);
+    const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
         if (blog) {
@@ -52,7 +52,7 @@ const BlogForm = ({ blog }) => {
             return value
                 .trim()
                 .toLowerCase()
-                .replace(/^[a-zA-Z\d]+/g, '-');
+                .replace(/[^a-zA-Z\d]+/g, "-");
         }
         return "";
     }, [])

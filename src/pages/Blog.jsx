@@ -18,7 +18,7 @@ const Blog = () => {
         if (slug) {
             appwriteService.getBlog(slug).then((blog) => {
                 if (blog) {
-                    setBlog(Blog);
+                    setBlog(blog);
                 } else {
                     navigate('/');
                 }
