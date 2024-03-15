@@ -38,7 +38,7 @@ const Blog = () => {
     }
 
     return blog ? (
-        <div className="py-8">
+        <div className="py-16">
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img

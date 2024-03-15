@@ -12,5 +12,6 @@ import Login from "./Login.jsx";
 import BlogForm from "./blog-form/BlogForm.jsx";
 import BlogCard from "./BlogCard.jsx";
 import AuthLayout from "./AuthLayout.jsx";
+import Banner from "./Banner.jsx";
 
-export { Header, Footer, Container, Logo, Logout, Input, Button, Select, RTE, Signup, Login, BlogForm, BlogCard, AuthLayout };
+export { Header, Footer, Container, Logo, Logout, Input, Button, Select, RTE, Signup, Login, BlogForm, BlogCard, AuthLayout, Banner };

@@ -34,7 +34,7 @@ const BlogForm = ({ blog }) => {
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
 
-            if (file) {
+            if (file && userData) {
                 const fileId = file.$id;
                 data.featuredImageID = fileId;
 
