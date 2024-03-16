@@ -37,9 +37,9 @@ const AllBlogs = () => {
                 desc="Dive into captivating stories, insightful musings, and inspiring journeys - explore our diverse collection of blogs, where every click leads to a world of discovery." 
             />
             <Container>
-                <div className="flex flex-wrap">
+                <div className="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog) => (
-                        <div key={blog.$id} className="p-2 w-1/4">
+                        <div key={blog.$id} className="p-6 shadow-lg rounded-xl cursor-pointer bg-white">
                             <BlogCard {...blog} />
                         </div>
                     ))}

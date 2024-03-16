@@ -2,15 +2,18 @@ import React from 'react';
 import appwriteService from '../appwrite/config.js';
 import { Link } from 'react-router-dom';
 
-const BlogCard = ({$id, title, featuredImageID}) => {
+const BlogCard = ({$id, title, featuredImageID, userId}) => {
+
     return (
         <Link to={`/blog/${$id}`}>
-            <div className="w-full bg-gray-100 rounded-xl p-4">
-                <div className="w-full flex justify-center mb-4">
-                    <img src={appwriteService.getFilePreview(featuredImageID)} alt={title} className="rounded-xl" />
-                </div>
-                <h2 className="text-xl font-bold">{title}</h2>
+            <div className="flex justify-center">
+                <img 
+                    src={appwriteService.getFilePreview(featuredImageID)} alt={title} 
+                    className="w-full rounded-lg" 
+                />
             </div>
+            <h2 className="text-xl font-bold mt-4">Title: <span className="font-semibold">{title}</span></h2>
+            <p className="text-base font-semibold mt-1">Author: {userId}</p>
         </Link>
     )
 }
