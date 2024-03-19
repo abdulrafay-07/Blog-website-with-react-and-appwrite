@@ -38,7 +38,7 @@ const BlogForm = ({ blog }) => {
                 const fileId = file.$id;
                 data.featuredImageID = fileId;
 
-                const blogDB = await appwriteService.createBlog({...data, userId: userData.$id});
+                const blogDB = await appwriteService.createBlog({...data, userId: userData.$id, name: userData.name});
 
                 if (blogDB) {
                     navigate(`/blog/${blogDB.$id}`)
