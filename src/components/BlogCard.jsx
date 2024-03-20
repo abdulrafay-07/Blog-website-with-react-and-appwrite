@@ -8,7 +8,7 @@ const BlogCard = ({$id, title, featuredImageID, name}) => {
             <div className="flex justify-center">
                 <img
                     src={appwriteService.getFilePreview(featuredImageID)} alt={title} 
-                    className="w-full rounded-lg" 
+                    className="w-full rounded-lg aspect-video object-cover" 
                 />
             </div>
             <h2 className="text-xl font-bold mt-4">Title: <span className="font-semibold">{title}</span></h2>

@@ -24,6 +24,7 @@ const Login = () => {
                     dispatch(authLogin(userData));
                 }
                 navigate("/");
+                //window.location.reload();
             }
         } catch (error) {
             setError(error.message);

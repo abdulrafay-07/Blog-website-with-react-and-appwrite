@@ -40,31 +40,33 @@ const Blog = () => {
     return blog ? (
         <div className="py-16">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-                    <img
-                        src={appwriteService.getFilePreview(blog.featuredImageID)}
-                        alt={blog.title}
-                        className="rounded-xl"
-                    />
-
-                    {isAuthor && (
-                        <div className="absolute right-6 top-6">
-                            <Link to={`/edit-blog/${blog.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
-                                    Edit
+                <div className="flex flex-col">
+                    <div className="mb-6 inline-flex justify-end w-1/2">
+                        <h1 className="text-4xl font-bold mr-6">{blog.title}</h1>
+                        {isAuthor && (
+                            <div className="mt-1">
+                                <Link to={`/edit-blog/${blog.$id}`}>
+                                    <Button bgColor="bg-green-500" className="mr-4 px-6">
+                                        Edit
+                                    </Button>
+                                </Link>
+                                <Button bgColor="bg-red-500" onClick={deleteBlog}>
+                                    Delete
                                 </Button>
-                            </Link>
-                            <Button bgColor="bg-red-500" onClick={deleteBlog}>
-                                Delete
-                            </Button>
-                        </div>
-                    )}
-                </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{blog.title}</h1>
-                </div>
-                <div className="browser-css">
-                    {parse(blog.content)}
+                            </div>
+                        )}
+                    </div>
+                    <div className="w-full mb-6 flex justify-center"
+                    >
+                        <img
+                            src={appwriteService.getFilePreview(blog.featuredImageID)}
+                            alt={blog.title}
+                            className="w-4/5 rounded-lg aspect-video object-cover border-2 border-black border-opacity-40"
+                        />
+                    </div>
+                    <div className="flex justify-start ml-32 browser-css">
+                        {parse(blog.content)}
+                    </div>
                 </div>
             </Container>
         </div>

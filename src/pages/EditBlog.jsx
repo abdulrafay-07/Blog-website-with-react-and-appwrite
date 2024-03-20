@@ -22,7 +22,7 @@ const EditBlog = () => {
     }, [slug, navigate])
 
     return blog ? (
-        <div className="py-8">
+        <div className="py-16">
             <Container>
                 <BlogForm blog={blog} />
             </Container>

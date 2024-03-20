@@ -6,14 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const BlogForm = ({ blog }) => {
-    const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
-        defaultValues: {
-            title: blog?.title || "",
-            slug: blog?.slug || "",
-            content: blog?.content || "",
-            status: blog?.status || "active",
-        }
-    });
+    const {register, handleSubmit, watch, setValue, control, getValues} = useForm();
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
@@ -58,6 +51,18 @@ const BlogForm = ({ blog }) => {
     }, [])
 
     useEffect(() => {
+        if (blog) {
+            setValue('title', blog.title || '');
+            setValue('content', blog.content || '');
+            setValue('status', blog.status || 'active');
+            if (blog.title) {
+                const transformedSlug = slugTransform(blog.title);
+                setValue('slug', transformedSlug || '');
+            }
+        }
+    }, [blog, setValue, slugTransform]);
+
+    useEffect(() => {
         const subscription = watch((value, {name}) => {
             if (name === "title") {
                 setValue("slug", slugTransform(value.title, {shouldValidate: true}));
@@ -95,10 +100,10 @@ const BlogForm = ({ blog }) => {
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !blog })}
                 />
-                {blog && (
+                {blog && blog.featuredImageID && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(blog.featuredImage)}
+                            src={appwriteService.getFilePreview(blog.featuredImageID)}
                             alt={blog.title}
                             className="rounded-lg"
                         />
