@@ -39,10 +39,9 @@ const Blog = () => {
 
     return blog ? (
         <div className="py-16">
-            <Container>
-                <div className="flex flex-col">
-                    <div className="mb-6 inline-flex justify-end w-1/2">
-                        <h1 className="text-4xl font-bold mr-6">{blog.title}</h1>
+                <div className="flex flex-col max-w-5xl mx-auto px-4 py-10">
+                    <div className="mb-3 md:mb-6 inline-flex justify-between items-center">
+                        <h1 className="text-xl sm:text-2xl md:text-4xl font-bold md:mr-6">{blog.title}</h1>
                         {isAuthor && (
                             <div className="mt-1">
                                 <Link to={`/edit-blog/${blog.$id}`}>
@@ -56,19 +55,18 @@ const Blog = () => {
                             </div>
                         )}
                     </div>
-                    <div className="w-full mb-6 flex justify-center"
+                    <div className="w-full mb-3 md:mb-6 flex"
                     >
                         <img
                             src={appwriteService.getFilePreview(blog.featuredImageID)}
                             alt={blog.title}
-                            className="w-4/5 rounded-lg aspect-video object-cover border-2 border-black border-opacity-40"
+                            className="w-full lg:w-4/5 rounded-lg aspect-video object-cover border-2 border-black border-opacity-40"
                         />
                     </div>
-                    <div className="flex justify-start ml-32 browser-css">
+                    <div className="flex browser-css">
                         {parse(blog.content)}
                     </div>
                 </div>
-            </Container>
         </div>
     ) : null
 }
