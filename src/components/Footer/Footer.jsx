@@ -4,17 +4,19 @@ import { Logo } from '../index.js';
 
 const Footer = () => {
     return (
-        <section className="py-4 px-6">
+        <section className="py-8 px-6">
             <div className="relative z-10 px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-                        <div className="flex h-full flex-col justify-between">
+                        <div className="flex h-full flex-col justify-evenly">
                             <div className="mb-4 inline-flex items-center">
-                                <Logo width="100px" />
+                                <Link to='/'>
+                                    <Logo />
+                                </Link>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">
-                                    &copy; Copyright 2023. All Rights Reserved by DevUI.
+                                    &copy; Copyright 2023. All Rights Reserved by Stock Blogs.
                                 </p>
                             </div>
                         </div>

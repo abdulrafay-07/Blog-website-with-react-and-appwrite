@@ -43,9 +43,9 @@ const Blog = () => {
                     <div className="mb-3 md:mb-6 inline-flex justify-between items-center">
                         <h1 className="text-xl sm:text-2xl md:text-4xl font-bold md:mr-6">{blog.title}</h1>
                         {isAuthor && (
-                            <div className="mt-1">
+                            <div className="mt-1 flex flex-col md:flex-row justify-end">
                                 <Link to={`/edit-blog/${blog.$id}`}>
-                                    <Button bgColor="bg-green-500" className="mr-4 px-6">
+                                    <Button bgColor="bg-green-500" className="mr-4 mb-1 md:mb-0 w-full md:w-auto md:px-6">
                                         Edit
                                     </Button>
                                 </Link>
@@ -63,7 +63,7 @@ const Blog = () => {
                             className="w-full lg:w-4/5 rounded-lg aspect-video object-cover border-2 border-black border-opacity-40"
                         />
                     </div>
-                    <div className="flex browser-css">
+                    <div className="browser-css">
                         {parse(blog.content)}
                     </div>
                 </div>

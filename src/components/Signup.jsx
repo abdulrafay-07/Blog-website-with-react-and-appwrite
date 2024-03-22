@@ -79,7 +79,7 @@ const Signup = () => {
                             })}
                         />
                         <Button
-                            type="submit" className="w-full"
+                            type="submit" className="w-full hover:bg-orange-500 ease duration-150" bgColor='bg-orange-600'
                         >
                             Create Account
                         </Button>

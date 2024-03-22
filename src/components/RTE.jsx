@@ -18,6 +18,7 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
                         init={{
                             initialValue: {defaultValue},
                             height: 500,
+                            branding: false,
                             menubar: true,
                             plugins: [
                                 "image",
@@ -25,7 +26,6 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
                                 "autolink",
                                 "lists",
                                 "link",
-                                "image",
                                 "charmap",
                                 "preview",
                                 "anchor",

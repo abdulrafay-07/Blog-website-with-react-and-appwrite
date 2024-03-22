@@ -26,7 +26,7 @@ const Home = () => {
                         /> : null
                 }
                 <Container>
-                    <div className="p-2 w-full flex items-center justify-center">
+                    <div className="pt-20 md:pt-40 xl:pt-60 w-full flex justify-center">
                         {
                             isAuthenticated ? <h1 className="text-2xl font-bold py-4 hover:text-gray-500">There are no blogs currently.</h1> : <h1 className="text-2xl font-bold py-4 hover:text-gray-500">Login to read blogs.</h1>
                         }

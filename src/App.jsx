@@ -22,9 +22,9 @@ function App() {
   }, [])
   
   return !loading ? (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="flex-grow bg-white">
         <Outlet />
       </main>
       <Footer />

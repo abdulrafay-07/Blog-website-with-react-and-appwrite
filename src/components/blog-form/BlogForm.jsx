@@ -73,8 +73,8 @@ const BlogForm = ({ blog }) => {
     }, [watch, slugTransform, setValue]) 
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap flex-col md:flex-row">
+            <div className="w-full md:w-2/3 px-2">
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -92,7 +92,7 @@ const BlogForm = ({ blog }) => {
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
-            <div className="w-1/3 px-2">
+            <div className="w-full md:w-1/3 px-2">
                 <Input
                     label="Featured Image :"
                     type="file"
@@ -115,7 +115,7 @@ const BlogForm = ({ blog }) => {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={blog ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={blog ? "bg-green-500" : "bg-orange-500"} className="w-full">
                     {blog ? "Update" : "Submit"}
                 </Button>
             </div>

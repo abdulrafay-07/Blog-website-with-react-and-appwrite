@@ -37,7 +37,7 @@ const Header = () => {
     ]
 
     return (
-        <header className="bg-black text-white fixed top-0 left-0 right-0 py-4 px-6">
+        <header className="bg-black text-white fixed top-0 left-0 right-0 py-4 px-6 z-50">
             <nav className="flex items-center">
                 <div className="mr-4">
                     <Link to='/'>
