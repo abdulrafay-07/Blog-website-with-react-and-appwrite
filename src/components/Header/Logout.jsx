@@ -16,7 +16,7 @@ const Logout = () => {
     return (
         <button 
             onClick={logoutHandler} 
-            className="inline-block px-6 py-2 duration-200 hover:bg-orange-400 rounded-full"
+            className="flex justify-start w-full md:inline-block px-6 py-2 duration-200 hover:bg-orange-400 md:rounded-full"
         >
             Log out
         </button>

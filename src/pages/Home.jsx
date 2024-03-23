@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import appwriteService from '../appwrite/config.js';
 import { Container, BlogCard, Banner } from '../components/index.js';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [blogs, setBlogs] = useState([]);
@@ -26,9 +27,9 @@ const Home = () => {
                         /> : null
                 }
                 <Container>
-                    <div className="pt-20 md:pt-40 xl:pt-60 w-full flex justify-center">
+                    <div className="pt-20 xl:pt-60 w-full flex justify-center">
                         {
-                            isAuthenticated ? <h1 className="text-2xl font-bold py-4 hover:text-gray-500">There are no blogs currently.</h1> : <h1 className="text-2xl font-bold py-4 hover:text-gray-500">Login to read blogs.</h1>
+                            isAuthenticated ? <h1 className="text-2xl font-bold py-4 hover:text-gray-500">There are no blogs currently.</h1> : <Link to="/login" className="text-2xl font-bold py-4 hover:text-gray-500">Login to read blogs.</Link>
                         }
                     </div>
                 </Container>
